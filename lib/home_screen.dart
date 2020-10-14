@@ -2,9 +2,6 @@ import 'dart:async';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:memory_app/data/data.dart';
-import 'package:memory_app/dialog.dart';
-import 'package:memory_app/stopwatch.dart';
-import 'model/tile_model.dart';
 import 'size_config.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -217,11 +214,10 @@ class _TileState extends State<Tile> {
         child: GestureDetector(
       onTap: () {
         if (!selected) {
-          //Jeśli selectedTileIndex nie równa się
           if (selectedIcon != null) {
             if (selectedIcon == pairs[widget.tileIndex].getIcon()) {
               //correct
-              print('correct');
+
               selected = true;
               Future.delayed(const Duration(seconds: 1), () {
                 movesCounter = movesCounter + 1;
